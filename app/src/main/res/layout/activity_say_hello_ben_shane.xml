@@ -10,7 +10,7 @@
 
     <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="55dp"
+        android:textSize="31dp"
         android:id="@+id/textView" />
 
     <Button
@@ -18,16 +18,77 @@
         android:layout_height="wrap_content"
         android:text="Push Me Pls"
         android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="onButtonPush" />
+        android:onClick="onButtonPush"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rdSlider"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"
+        android:indeterminate="false"
+        android:max="255"
+        android:progress="0"
+        android:layout_toEndOf="@+id/gnValue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Red:"
+        android:id="@+id/rdValue"
+        android:textSize="30dp"
+        android:layout_alignBottom="@+id/rdSlider"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Green:"
+        android:id="@+id/gnValue"
+        android:textSize="30dp"
+        android:layout_below="@+id/rdSlider"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gnSlider"
+        android:layout_alignBottom="@+id/gnValue"
+        android:layout_alignEnd="@+id/rdSlider"
+        android:layout_toEndOf="@+id/gnValue"
+        android:max="255"
+        android:progress="0"
+        android:indeterminate="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Blue:"
+        android:id="@+id/blValue"
+        android:textSize="30dp"
+        android:layout_below="@+id/gnValue"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/blSlider"
+        android:max="255"
+        android:progress="0"
+        android:indeterminate="false"
+        android:layout_alignBottom="@+id/blValue"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/gnValue" />
 
 </RelativeLayout>
