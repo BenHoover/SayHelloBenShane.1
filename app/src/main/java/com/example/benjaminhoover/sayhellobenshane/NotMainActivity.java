@@ -1,11 +1,11 @@
 package com.example.benjaminhoover.sayhellobenshane;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -19,8 +19,11 @@ public class NotMainActivity extends Activity {
         String text = intent.getStringExtra("text");
         TextView textTwo = (TextView) findViewById(R.id.momsSp);
         textTwo.setText(text);
+        int[] colors = intent.getIntArrayExtra("colors");
         RelativeLayout bgt = (RelativeLayout) findViewById(R.id.bgt);
-        bgt.setBackgroundColor(Color.argb(255, 123, 69, 111));
+        bgt.setBackgroundColor(Color.argb(255, colors[0], colors[1], colors[2]));
+        float textSize = intent.getFloatExtra("textSize", 30);
+        textTwo.setTextSize(textSize);
     }
 
 
