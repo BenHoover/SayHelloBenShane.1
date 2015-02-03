@@ -81,9 +81,10 @@ public class SayHelloBenShane extends Activity  {
                 TextView textToScale = (TextView) findViewById(R.id.exampleText);
                 if(textUserEnter.getText().toString().equals("")){
                     return;
+                }else{
+                    double temp = Double.parseDouble(textUserEnter.getText().toString());
+                    textToScale.setTextSize((float)temp);
                 }
-                double temp = Double.parseDouble(textUserEnter.getText().toString());
-                textToScale.setTextSize((float)temp);
             }
         });
 
@@ -188,9 +189,10 @@ public class SayHelloBenShane extends Activity  {
         intent.putExtra("colors", colors);
         if(textUserEnter.getText().toString().equals("")){
             return;
+        }else{
+            double textSize = Double.parseDouble(textUserEnter.getText().toString());
+            intent.putExtra("textSize", (float)textSize);
         }
-        double textSize = Double.parseDouble(textUserEnter.getText().toString());
-        intent.putExtra("textSize", (float)textSize);
         startActivity(intent);
     }
 }
