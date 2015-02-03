@@ -21,7 +21,7 @@ public class NotMainActivity extends Activity {
         textTwo.setText(text);
         int[] colors = intent.getIntArrayExtra("colors");
         RelativeLayout bgt = (RelativeLayout) findViewById(R.id.bgt);
-        bgt.setBackgroundColor(Color.argb(255, colors[0], colors[1], colors[2]));
+        bgt.setBackgroundColor(Color.argb(colors[0], colors[1], colors[2], colors[3]));
         float textSize = intent.getFloatExtra("textSize", 30);
         textTwo.setTextSize(textSize);
     }

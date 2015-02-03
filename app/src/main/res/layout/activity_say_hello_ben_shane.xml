@@ -13,15 +13,6 @@
         android:textSize="25dp"
         android:id="@+id/textView" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Push Me Pls"
-        android:id="@+id/button"
-        android:onClick="onButtonPush"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,33 +25,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/rdSlider"
-        android:layout_below="@+id/editText"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentEnd="true"
         android:indeterminate="false"
         android:max="255"
         android:progress="0"
-        android:layout_toEndOf="@+id/gnValue"
-        android:progressTint="#ff000000"
-        android:progressTintMode="add" />
+        android:layout_alignBottom="@+id/rdValue"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/gnValue" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Red:"
         android:id="@+id/rdValue"
-        android:textSize="30dp"
-        android:layout_alignBottom="@+id/rdSlider"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/rdSlider"
-        android:singleLine="false"/>
+        android:textSize="27dp"
+        android:singleLine="false"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Green:"
         android:id="@+id/gnValue"
-        android:textSize="30dp"
+        android:textSize="27dp"
         android:layout_below="@+id/rdSlider"
         android:layout_alignParentStart="true" />
 
@@ -80,7 +67,7 @@
         android:layout_height="wrap_content"
         android:text="Blue:"
         android:id="@+id/blValue"
-        android:textSize="30dp"
+        android:textSize="27dp"
         android:layout_below="@+id/gnValue"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/blSlider" />
@@ -100,10 +87,10 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="@android:dimen/app_icon_size"
-        android:layout_below="@+id/blValue"
         android:layout_weight="1"
-        android:layout_alignStart="@+id/blValue"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:layout_below="@+id/alphaSlider"
+        android:layout_alignParentStart="true">
 
         <Button
             android:layout_width="0dp"
@@ -161,15 +148,61 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:text="Text Size Example"
         android:gravity="center"
         android:id="@+id/exampleText"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/button"
         android:textAlignment="gravity"
-        android:textSize="1dp" />
+        android:textSize="0dp"
+        android:layout_above="@+id/linearLayout3" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alphaSlider"
+        android:layout_below="@+id/blSlider"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/blValue"
+        android:max="255" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alpha:"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/blValue"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/alphaSlider"
+        android:layout_toStartOf="@+id/blSlider"
+        android:textSize="27dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/alphaSlider"
+        android:id="@+id/linearLayout3">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="Push To Run. Pls."
+            android:id="@+id/button"
+            android:onClick="onButtonPush"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:entries="@array/colourOptions"
+            android:layout_weight="2"
+            android:id="@+id/spinner" />
+    </LinearLayout>
 
 </RelativeLayout>
