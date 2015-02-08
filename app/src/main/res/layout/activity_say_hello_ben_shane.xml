@@ -166,7 +166,7 @@
         android:layout_below="@+id/blSlider"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/blValue"
-        android:max="255" />
+        android:max="255"/>
 
     <TextView
         android:layout_width="wrap_content"

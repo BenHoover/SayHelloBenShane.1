@@ -81,6 +81,7 @@ public class SayHelloBenShane extends Activity  {
         red = green = blue = 0;
         alpha = 255;
 
+
         colourOptions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -144,6 +145,8 @@ public class SayHelloBenShane extends Activity  {
 
             }
         });
+
+
 
         textUserEnter.addTextChangedListener(new TextWatcher() {
             @Override
@@ -279,14 +282,26 @@ public class SayHelloBenShane extends Activity  {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        System.out.println(item);
+        switch (item.getItemId())
+        {
+            case R.id.action_about:
+                startActivity(new Intent(this, About.class));
+                return true;
+//            case R.id.action_settings:
+//                startActivity(new Intent(this, Settings.class));
+//                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+       // int id = item.getItemId();
 
-        return super.onOptionsItemSelected(item);
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+
+//        return super.onOptionsItemSelected(item);
     }
 
     public void onButtonPush (View view) {
